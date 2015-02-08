@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>You have Realtime Data. You just don't know it!</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link rel="stylesheet" href="./themes/pusher-default/theme.css" />
+</head>
+<body>
+  <textarea id="source">
+    
+    name: lblue
+    layout: true
+    
+    class: bg-light, center, middle
+    
+    ---
+    
+    name: dblue
+    layout: true
+    
+    class: bg-dark, center, middle
+    
+    ---
+    
+    template: dblue
+    layout: false
+    class: title, h1-big, pinkie-list
+    
+    # You have Realtime Data. You just don't know it!
+    
+    * Phil @leggetter
+    * Head of Evangelism
+    * Pusher
+    
+    ???
+    
+    ---
+    
+    template: dblue
+    class: title, h1-big
+    
+    ![](./themes/pusher-default/img/pusher-logos/pusher-slogan-dark.png)
+    
+    ???
+    
+    * I work for Pusher...
+    
+    ---
+    
+    class: bg-white, bg-cover
+    
+    background-image: url(img/realtime-web-solutions-updated.png)
+    
+    ???
+    
+    We're one of many realtime technologies...
+    
+    ---
+    
+    template: dblue
+    class: bg-contain
+    background-image: url(img/dollar.jpg)
+    
+    > that real-time framework is awesome - now to find a use for it
+    
+    ---
+    
+    class: bg-cover
+    background-image: url(img/rolling-in-dollars.gif)
+    
+    ---
+    
+    template: dblue
+    class: h1-big
+    
+    ## 1. You have Realtime Data
+    ## 2. What you can do with it
+    
+    ---
+    
+    template: dblue
+    class: h1-big
+    
+    # What is Realtime?
+    
+    ???
+    
+    * No real time for detail
+    * But a few examples
+    
+    ---
+    
+    class: center, middle, bg-cover, em-text
+    background-image: url(img/warp-core.gif)
+    
+    # Hard Realtime
+    
+    ---
+    
+    class: center, middle, bg-cover
+    background-image: url(img/core-breach.gif)
+    
+    ???
+    
+    Maybe the Enterprise used SignalR to manage its
+    warp core safety system?
+    
+    ---
+    
+    layout: false
+    class: bg-cover, em-text, middle, center
+    background-image: url(img/soft-realtime.gif)
+    
+    # Soft Realtime
+    
+    ???
+    
+    * It's still really fast
+    * Business critical: have safty fallbacks
+    
+    ---
+    
+    template: dblue
+    class: h1-big
+    background-image: url(img/searching.gif)
+    
+    # Where do you find Realtime data?
+    
+    ---
+    
+    template: lblue
+    class: h1-big
+    
+    # The Evented Web
+    
+    ???
+    
+    * 2011 Mike Brevoort - the Evented Web
+    * WebHooks, Comet, WebSocket
+    
+    ---
+    
+    template: dblue
+    class: bg-cover
+    background-image: url(img/call-you.png)
+    
+    <small class="this-bottom">http://www.slideshare.net/brevoortm/the-evented-web</small>
+    
+    ???
+    
+    * Something happens = events
+    * I'll call you = push to interested parties
+    
+    ---
+    
+    template: dblue
+    class: bg-cover
+    background-image: url(img/github-webhooks.png)
+    
+    <small class="this-bottom">http://www.slideshare.net/brevoortm/the-evented-web</small>
+    
+    ???
+    
+    * when change or interaction occurs
+    * trigger an event about that change or interaction
+    * which is received by interested parties
+
+    ---
+    
+    template: dblue
+    class: h1-big
+    
+    # Events
+    
+    ## Where do events occur in your app?
+    
+    * Changes
+    * Interactions
+    
+    ---
+    
+    template: lblue
+    
+    ## Data Changes
+    
+    * **C**reate
+    * <span style="text-decoration: line-through"><strong>R</strong>ead</span>
+    * **U**pdate
+    * **D**elete
+    
+    ---
+    
+    template: lblue
+    
+    ## Database Interactions
+    
+    #### SQL
+    
+    ```sql
+    INSERT INTO people
+    UPDATE people WHERE ...
+    ```
+    
+    
+    #### ORM
+    
+    ```js
+    Person p = repository.GetPerson(10);
+    p.firstName = "Phil";
+    p.save();
+    ```
+    
+    ---
+    
+    template: lblue
+    
+    ## System Interactions
+    
+    ### Inter-System Communication
+    
+    ---
+    
+    template: lblue
+    
+    ## Web Endpoints
+    
+    #### Sinatra
+    
+    ```ruby
+    post '/interact' do
+      # endpoint called
+    end
+    ```
+    
+    #### Express
+    
+    ```js
+    app.post('/interact', function(req, res) {
+      // endpoint called
+    });
+    ```
+    
+    ???
+    
+    * Web Services
+    * WebHooks
+    
+    ---
+    
+    template: lblue
+    
+    ## Logging
+    
+    ```rb
+    require 'logger'
+    $LOG = Logger.new('log_file.log', 'monthly')   
+    $LOG.debug("I'm logging stuff!") 
+    ```
+    
+    ```js
+    var winston = require('winston');
+    winston.log('info', {'some': 'data' });
+    ```
+    
+    ???
+    
+    * Different levels of logging
+    * Debug -> Info
+    * Is info always logged? Is it useful?
+    
+    ---
+    
+    template: lblue
+    
+    ## System Interactions
+    
+    * Web endpoints
+    * Logging
+    * CRON Jobs
+    * Incoming Email
+    
+    ---
+    
+    template: lblue
+    
+    ## User Interactions
+    
+    ???
+    
+    ---
+    
+    template: lblue
+    
+    ## Accessing & Viewing Pages
+    
+    **TODO: example**
+    
+    ???
+    
+    Same as web endpoints
+    
+    ---
+    
+    template: lblue
+    
+    ## Interacting with the App
+    
+    **TODO: example**
+    
+    ---
+    
+    template: lblue
+    
+    ## User to User Interactions
+    
+    **TODO: example**
+    
+    ---
+    
+    template: lblue
+    
+    ## User Interactions
+    
+    * Accessing & Viewing Pages
+    * Interacting with the App
+    * User to User Communication
+    
+    ---
+    
+    template: dblue
+    
+    ## You Have Realtime Data
+    
+    * Changes & Interactions
+    * Data Changes
+    * System Interactions
+    * User Interactions
+    
+    ---
+    
+    template: dblue
+    class: h1-big
+    
+    # How can you use this data?
+    
+    ---
+    
+    template: lblue
+    
+    ## What's happening *right now* in your App?
+    
+    ???
+    
+    ---
+    
+    theme: lblue
+    
+    ## System Analytics
+    
+    * System stats
+      * Memory
+      * CPU
+      * Errors
+    * Logs
+      * System logs
+      * Access logs
+      
+    ???
+    
+    * Catch errors early
+    * logs later could be too late
+
+    ---
+    
+    template: lblue
+    
+    * Statd
+    * Graphite
+    * Liberato
+    
+    ---
+    
+    ## Website Analytics
+    
+    * Advertising Campaign
+      * Change or Cancel
+    * App Usage
+      * Popular Pages/Views
+      * Online Users
+    
+    ???
+    
+    * Analyising the logs later could be too late
+    * Ad goals being achieved?
+    
+    ---
+    
+    template: lblue
+    
+    ## Building Awesome Realtime Features for Your Customers
+    
+    ???
+    
+    ---
+    
+    template: dblue
+    class: em-text, bg-cover, trans-h
+    background-image: url(img/itv-news-may-2014.png)
+    
+    # Notifications & Signalling
+    
+    ???
+    
+    * Something has happened
+    * Changed
+    * Alert - do something
+    * Notify interested parties
+    * Stock/Ticket/Room count on a page
+    
+    ---
+    
+    class: center, bg-cover, em-text, trans-h
+    background-image: url(/img/delighted-app.gif)
+    
+    # Activity Streams
+    
+    ???
+    
+    * a stream of activity
+    * things have - and are - happening
+    * synonymous with social apps
+      * Twitter
+      * Facebook
+      * Google+
+      * News
+      * Sports
+    * What are friends been doing
+    * What's happening here
+    
+    ---
+    
+    template: dblue
+    
+    class: bg-cover, em-text, trans-h
+    background-image: url(/img/senate-election-results.png)
+    
+    # Data Visualizations
+    
+    ---
+    
+    template: lblue
+    class: bg-video, trans-h, em-text
+    
+    # Chat
+    
+    <video id="video" autoplay="true" loop="true">
+      <source src="/img/pie.mp4" type="video/mp4">
+    </video>
+    
+    ???
+    
+    * The 101 of realtime
+    * An interactive experience
+    * Real-time matters
+    * Realtime assistance
+    
+    ---
+    
+    template: lblue
+    class: trans-h
+    background-image: url(/img/sprintly.jpg)
+    
+    # Multi-User Collaboration
+    
+    ???
+    
+    * Google Apps
+    * Cloud 9
+    * TODO: other
+    
+    ---
+    
+    template: lblue
+    class: bg-cover, trans-h
+    background-image: url(img/quizup.png)
+    
+    # Multiplayer Games
+    
+    ---
+    
+    template: dblue
+    
+    # Realtime APIs
+    
+    ???
+    
+    * For technical customers
+    * B2B
+    
+    ---
+    
+    template: lblue
+    
+    **Examples**
+    
+    ---
+    
+    template: dblue
+    
+    # How?
+    
+    ???
+    
+    * Categorise and publish the events you've discovered
+    * Direct publishing
+    * Stick on a message queue
+    * Add to a database, query and publish
+    * Build awesome stuff
+    
+    ---
+    
+    template: dblue
+    
+    ## Conclusion
+    
+    ---
+    
+    template: dblue
+    
+    ## Q&A
+    
+    * What are you building?
+    
+    ???
+    
+    I'll try and tell you where the realtime data is and what you can do with it.
+    
+
+    ---
+    
+    template: dblue
+    class: title, h1-big, pinkie-list
+    
+    * Phil @leggetter
+    * Head of Evangelism
+    * Pusher
+    
+  </textarea>
+  <script src="bower_components/remark/out/remark.js">
+  </script>
+  <script>
+  var slideshow = remark.create( {
+    navigation: {
+      scroll: false,
+    }
+  });
+  </script>
+</body>
+</html>
