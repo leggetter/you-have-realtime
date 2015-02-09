@@ -31,9 +31,10 @@ body {
   /*font-family: 'Droid Serif';*/
   font-family: 'Source Sans Pro',"Helvetica Neue",Verdana,Arial,sans-serif;
 }
-h1, h2, h3 {
+h1, h2, h3, h4 {
   /*font-family: 'Yanone Kaffeesatz';*/
   font-weight: normal;
+  text-align: center;
 }
 
 .remark-slide-content {
@@ -50,6 +51,13 @@ h1, h2, h3 {
 
 .remark-slide .trans-h h1,
 .remark-slide .trans-h h2 {
+  background-color: black;
+  text-shadow:2px 2px 2px #000;
+  opacity:0.8;
+  filter:alpha(opacity=80); /* For IE8 and earlier */
+}
+
+.remark-slide .trans-all *{
   background-color: black;
   text-shadow:2px 2px 2px #000;
   opacity:0.8;
@@ -183,6 +191,11 @@ h1, h2, h3 {
   font-size: 1.1em;
 }
 
+.remark-slide ul ul {
+  display: block;
+  font-size: 1em;
+}
+
 .remark-slide .block ul {
   display: block;
 }
@@ -238,4 +251,19 @@ blockquote:before {
 }
 blockquote p {
   display: inline;
+}
+
+.code-reveal pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.code-reveal pre code {
+  border-radius: 0;
+  /*padding-bottom: 0 !important;
+  padding-top: 0 !important;*/
+}
+
+.remark-slide>.top {
+  vertical-align: top;
 }

@@ -75,6 +75,12 @@
     
     ## 1. You have Realtime Data
     ## 2. What you can do with it
+    ## 3. How to do it
+    ## 4. Q&A
+    
+    ???
+    
+    * Who believes they don't have realtime data in their app?
     
     ---
     
@@ -84,9 +90,6 @@
     # What is Realtime?
     
     ???
-    
-    * No real time for detail
-    * But a few examples
     
     ---
     
@@ -197,24 +200,29 @@
     #### SQL
     
     ```sql
-    INSERT INTO people
-    UPDATE people WHERE ...
+    INSERT INTO activities
+    UPDATE activities WHERE ...
     ```
     
     
     #### ORM
     
     ```js
-    Person p = repository.GetPerson(10);
-    p.firstName = "Phil";
+    Activity a = repository.GetActivity(10);
+    a.text = "Phil is still talking";
     p.save();
     ```
+    
+    ???
+    
+    * Anybody who doesn't have this in their app?
     
     ---
     
     template: lblue
+    class: h1-big
     
-    ## System Interactions
+    # System Interactions
     
     ### Inter-System Communication
     
@@ -259,7 +267,7 @@
     
     ```js
     var winston = require('winston');
-    winston.log('info', {'some': 'data' });
+    winston.log('info', {'some': 'data'});
     ```
     
     ???
@@ -282,22 +290,24 @@
     ---
     
     template: lblue
+    class: h1-big
     
-    ## User Interactions
+    # User Interactions
     
     ???
     
     ---
     
     template: lblue
+    class: trans-h, bg-cover, top
+    background-image: url(img/pusher-site.png)
     
     ## Accessing & Viewing Pages
     
-    **TODO: example**
-    
     ???
     
-    Same as web endpoints
+    * Same as web endpoints
+    * But user related
     
     ---
     
@@ -305,7 +315,12 @@
     
     ## Interacting with the App
     
-    **TODO: example**
+    * Clicking on the UI
+    * Typing
+    * Dragging
+    * Mouse moves
+    * Navigating views
+    * ...
     
     ---
     
@@ -313,7 +328,10 @@
     
     ## User to User Interactions
     
-    **TODO: example**
+    * Actions specifically for other users
+      * Comments
+      * Mentions
+      * Updates to shared data
     
     ---
     
@@ -328,10 +346,13 @@
     ---
     
     template: dblue
+    background-image: url(img/excited-data.gif)
+    class: em-text
     
     ## You Have Realtime Data
     
-    * Changes & Interactions
+    ### Changes & Interactions
+    
     * Data Changes
     * System Interactions
     * User Interactions
@@ -341,29 +362,33 @@
     template: dblue
     class: h1-big
     
-    # How can you use this data?
+    # What you can do with the data?
     
     ---
     
     template: lblue
+    class: h1-big
     
-    ## What's happening *right now* in your App?
+    # What's happening right now in your App?
     
     ???
     
     ---
     
-    theme: lblue
+    template: lblue
     
     ## System Analytics
     
-    * System stats
-      * Memory
-      * CPU
-      * Errors
-    * Logs
-      * System logs
-      * Access logs
+    .left[#### System stats
+    
+    * Memory
+    * CPU
+    * Errors]
+    
+    .right[#### Logs
+    
+    * System logs
+    * Access logs]
       
     ???
     
@@ -373,31 +398,54 @@
     ---
     
     template: lblue
+    class: bg-cover
+    background-image: url(img/librato.png)
     
-    * Statd
-    * Graphite
-    * Liberato
-    
-    ---
-    
-    ## Website Analytics
-    
-    * Advertising Campaign
-      * Change or Cancel
-    * App Usage
-      * Popular Pages/Views
-      * Online Users
     
     ???
     
-    * Analyising the logs later could be too late
-    * Ad goals being achieved?
+    Who's using something like:
+    
+    * Graphite
+    * Liberato
+    * Statsd
     
     ---
     
     template: lblue
     
-    ## Building Awesome Realtime Features for Your Customers
+    ## Website Analytics
+    
+    .left[#### App Usage
+    
+    * Popular Pages/Views
+    * Online Users]
+    
+    .right[#### Advertising Campaign
+    
+    * Change
+    * Cancel]
+    
+    ???
+    
+    * Analysing the logs later could be too late
+    * Ad goals being achieved?
+    
+    ---
+    
+    background-image: url(img/google-analytics.jpg)
+    class: bg-cover
+    
+    ???
+    
+    * Build your own application analytics
+    
+    ---
+    
+    template: lblue
+    class: h1-big
+    
+    # Building Awesome Realtime Features for Your Customers
     
     ???
     
@@ -459,10 +507,10 @@
     
     ???
     
+    * Realtime assistance
     * The 101 of realtime
     * An interactive experience
     * Real-time matters
-    * Realtime assistance
     
     ---
     
@@ -475,6 +523,8 @@
     ???
     
     * Google Apps
+    * Sprint.ly
+    * Project management
     * Cloud 9
     * TODO: other
     
@@ -488,7 +538,8 @@
     
     ---
     
-    template: dblue
+    template: lblue
+    class: h1-big
     
     # Realtime APIs
     
@@ -499,51 +550,419 @@
     
     ---
     
+    class: bg-white, bg-cover
+    
+    background-image: url(img/apps-with-realtime-apis.png)
+    
+    ---
+    
+    template: dblue
+    class: h1-big
+    
+    # How to do it?
+    
+    ???
+    
+    * You have realtime data
+    * You know know how you can use it
+    * But how do you technically use it? 
+    
+    ---
+    
+    template: dblue
+    class: h1-big
+    
+    ## How to do it?
+    
+    * <span style="text-decoration: line-through;">Identify the data</span> &#10004;
+    * Analyse/Process Data
+    * Describe the data
+    * Publish data
+    * Consume the events & use
+    
+    (Information Architecture)
+    
+    ???
+    
+    * Interested parties subscribing to data
+    * A way of publishing to those interested parties
+    
+    ---
+    
+    template: lblue
+    class: h1-big
+    
+    # Analyse
+    
+    ???
+    
+    ---
+    
     template: lblue
     
-    **Examples**
+    ## Simple Data
+    
+    * None required
     
     ---
     
-    template: dblue
+    template: lblue
     
-    # How?
+    ## Complex Data
+    
+    * Process Asynchronously
+    * Queue or Store
+    * Querying
+    * Triggers & Changefeeds
     
     ???
     
-    * Categorise and publish the events you've discovered
-    * Direct publishing
-    * Stick on a message queue
-    * Add to a database, query and publish
-    * Build awesome stuff
+    * Use tool that help with this.
+    * e.g. Databases
+    * Data processing tools
+    * e.g. hadoop
     
     ---
     
-    template: dblue
+    template: lblue
+    class: code-reveal, top
     
-    ## Conclusion
+    ## Example: Complex Data
+    
+    ### RethinkDB
+    
+    ```js
+    r.table("gameplays")
+      .get(gameId)
+      .update({score: newScore})
+      .run(conn, callback)
+    ```
+    --
+    ```js
+    
+    // Elsewhere
+    r.table('gameplays')
+      .order_by(index=r.desc('score'))
+      .limit(5)
+      .changes().run(conn)
+    ```
+    --
+    ```js
+      .then(function(cursor) {
+        cursor.each(function(err, item) {
+          // new results
+        });
+      });
+    ```
     
     ---
     
-    template: dblue
+    template: lblue
+    class: h1-big
     
-    ## Q&A
+    # Describe
     
-    * What are you building?
-    
+    * Register interest in data
+    * What is the data?
+      * Name, Channels, Topic, Subjects
+    * What's happened to the data?
+      * Events
+      
     ???
     
-    I'll try and tell you where the realtime data is and what you can do with it.
-    
+    * Channels etc.
+    * Simple string identifiers
 
+    ---
+    
+    template: lblue
+
+    ## Simple Data
+    
+    * DB Schema or Document
+    * Use DB Table or Document names
+    * Use Model Names
+    * e.g. `activities`
+    
+    ???
+    
+    * Denormalized data
+      * channel per table
+      * channel per collection
+    
+    ---
+    
+    template: lblue
+    
+    ## Complex Data
+    
+    * Use the data and the analysis/query
+    * e.g. `top5games`
+    
+    ---
+    
+    template: lblue
+    class: h1-big
+    
+    # Publish Events
+    
+    ???
+    
+    ---
+    
+    template: lblue
+    class: code-reveal, top
+    
+    ## Data Changes: Simple
+    
+    ```js
+    // Insert
+    Activity a = repository.NewActivity();
+    a.text = "Phil is talking";
+    a.save();
+    ```
+    --
+    ```js
+    pusher.trigger('activities', 'new_activity', a);
+    ```
+    
+    --
+    
+    ```js
+    
+    // Update
+    a.text = "Phil is still talking";
+    a.save();
+    ```
+    
+    --
+    
+    ```js
+    pusher.trigger('activities', 'activity_updated', a);
+    ```
+    --
+    ```js
+    
+    // Delete
+    Activity a = repository.DeleteActivity(10);
+    ```
+    --
+    
+    ```js
+    pusher.trigger('activities', 'activity_deleted', a);
+    ```
+    
+    ???
+    
+    The beauty is the simplicity
+    
+    ---
+    
+    template: lblue
+    class: code-reveal, top
+    
+    ## Data Changes: Complex
+    
+    ```js
+    r.table('gameplays')
+    .order_by(index=r.desc('score'))
+    .limit(5)
+    .changes().run(conn)
+    .then(function(cursor) {
+    ```
+    --
+    ```js
+      var top5 = [];
+      cursor.each(function(err, item) {
+        top5.push(item);
+      });
+      pusher.trigger('gameplays', 'top_5_updated', top5)
+    });
+    ```
+    
+    ???
+    
+    * For very complex data
+    * Consider publishing the deltas
+    * Just the change
+    * requires state (previous value)
+    * more processing
+    
+    ---
+    
+    template: lblue
+    
+    ## Web endpoints
+    
+    ```ruby
+    post '/interact' do
+
+      Pusher.trigger('endpoints', 
+                     'new_interaction',
+                     {
+                       endpoint:'interact'
+                       post_data: params
+                     })
+      
+    end
+    ```
+    
+    ---
+    
+    template: lblue
+    
+    ## Logging
+    
+    ```js
+    var winston = require('winston');
+    
+    function log(level, data) {
+      winston.log(level, data);
+      pusher.trigger('logging', level, data);
+    }
+    
+    
+    log('info', {'some': 'data' });
+    ```
+    
+    ---
+    
+    template: lblue
+    class: h1-big
+    
+    # Consume & Use
+    
+    ---
+    
+    template: lblue
+    class: top
+    
+    ## Data Changes
+    
+    #### Server 
+    
+    ```js    
+    pusher.trigger('activities', 'new_activity', a);
+    pusher.trigger('activities', 'activity_updated', a);
+    pusher.trigger('activities', 'activity_deleted', a);
+    ```
+    
+    --
+    
+    #### Client
+    
+    ```js
+    var channel = pusher.subscribe('activities');
+    channel.bind('new_activity', function(activity) {
+      // Update the UI
+    });
+    
+    channel.bind('activity_updated', function(activity) {});
+    channel.bind('activity_deleted', function(activity) {});
+    ```
+    
+    ---
+    
+    template: lblue
+    
+    ## Web endpoints
+    
+    #### Server
+    
+    ```ruby
+    Pusher.trigger('endpoints', 
+                   'new_interaction',
+                   {endpoint:'interact'})
+    ```
+    
+    #### Client
+    
+    ```js
+    var channel = pusher.subscribe('endpoints');
+    channel.bind('new_interaction', function(interaction) {
+      // Update the UI
+    });
+    ```
+    
+    ---
+    
+    template: lblue
+    
+    ## Logging
+    
+    #### Server
+    
+    ```js
+    function log(level, data) {
+      winston.log(level, data);
+      pusher.trigger('logging', level, data);
+    }
+    ```
+    
+    #### Client
+    
+    ```js
+    var channel = pusher.subscribe('logging');
+    
+    channel.bind('info', function(logData) {
+      // Update the UI
+    });
+    
+    channel.bind('warning', function(logData) {});
+    channel.bind('error', function(logData) {});
+    ```
+    
+    ???
+    
+    * Channels may be used for each log level
+    
+    ---
+    
+    template: dblue
+    
+    ## How you do it
+    
+    * Identify the data
+    * Analyse/Process Data
+    * Describe the data
+      * channels, events
+    * Publish data
+      * channel, event, payload
+    * Consume the events & use
+      * subscribe & bind
+    
+    ---
+    
+    template: dblue
+    class: h1-big
+    
+    # Conclusion
+    
+    ## You Have Realtime Data
+    
+    --
+    
+    * Changes/Interactions = Realtime Data
+    * Analyse, Describe, Publish, Consume Data
+    * Realtime System/App Analysis
+    * Build realtime features for your customers
+    
     ---
     
     template: dblue
     class: title, h1-big, pinkie-list
     
+    # Q&A
+    
+    ## What are you building?
+    
     * Phil @leggetter
     * Head of Evangelism
     * Pusher
+    
+    ???
+    
+    I'll try and tell you where the realtime data is and what you can do with it.
     
   </textarea>
   <script src="bower_components/remark/out/remark.js">
