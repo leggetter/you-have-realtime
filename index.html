@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <link rel="stylesheet" href="./bower_components/pusher-remark-themes/theme.css" />
 </head>
-<body>
+<body class="big-code">
   <textarea id="source">
     
     name: lblue
@@ -15,28 +15,28 @@
     
     ---
     
-    name: dblue
+    name: lblue
     layout: true
     
     class: bg-dark, center, middle
     
     ---
     
-    template: dblue
+    template: lblue
     layout: false
-    class: title, h1-big, pinkie-list
+    class: title, h1-big
     
     # You have Realtime Data. You just don't know it!
     
-    * Phil @leggetter
-    * Head of Evangelism
-    * Pusher
+    * <span class="speaker">Phil @leggetter</span>
+    * <span class="speaker-job-title">Head of Evangelism</span>
+    * <span class="speaker-pusher-logo"></span>
     
     ???
     
     ---
     
-    template: dblue
+    template: lblue
     class: title, h1-big
     
     ![](./bower_components/pusher-remark-themes/img/pusher-logos/pusher-slogan-dark.png)
@@ -57,7 +57,7 @@
     
     ---
     
-    template: dblue
+    template: lblue
     class: bg-contain
     background-image: url(img/dollar.jpg)
     
@@ -70,7 +70,7 @@
     
     ---
     
-    template: dblue
+    template: lblue
     class: h1-big
     
     ## 1. You have Realtime Data
@@ -84,7 +84,7 @@
     
     ---
     
-    template: dblue
+    template: lblue
     class: h1-big
     
     # What is Realtime?
@@ -123,7 +123,7 @@
     
     ---
     
-    template: dblue
+    template: lblue
     class: h1-big
     background-image: url(img/searching.gif)
     
@@ -143,7 +143,7 @@
     
     ---
     
-    template: dblue
+    template: lblue
     class: bg-cover
     background-image: url(img/call-you.png)
     
@@ -156,7 +156,7 @@
     
     ---
     
-    template: dblue
+    template: lblue
     class: bg-cover
     background-image: url(img/github-webhooks.png)
     
@@ -170,7 +170,7 @@
 
     ---
     
-    template: dblue
+    template: lblue
     class: h1-big
     
     # Events
@@ -194,6 +194,7 @@
     ---
     
     template: lblue
+    class: wide
     
     ## Database Interactions
     
@@ -229,6 +230,7 @@
     ---
     
     template: lblue
+    class: wide
     
     ## Web Endpoints
     
@@ -256,6 +258,7 @@
     ---
     
     template: lblue
+    class: wide
     
     ## Logging
     
@@ -345,7 +348,7 @@
     
     ---
     
-    template: dblue
+    template: lblue
     background-image: url(img/excited-data.gif)
     class: em-text
     
@@ -359,7 +362,7 @@
     
     ---
     
-    template: dblue
+    template: lblue
     class: h1-big
     
     # What you can do with the data?
@@ -376,16 +379,17 @@
     ---
     
     template: lblue
+    class: wide
     
     ## System Analytics
     
-    .left[#### System stats
+    .left[### System stats
     
     * Memory
     * CPU
     * Errors]
     
-    .right[#### Logs
+    .right[### Logs
     
     * System logs
     * Access logs]
@@ -413,15 +417,18 @@
     ---
     
     template: lblue
+    class: wide
     
     ## Website Analytics
     
-    .left[#### App Usage
+    .left[
+    ### App Usage
     
     * Popular Pages/Views
     * Online Users]
     
-    .right[#### Advertising Campaign
+    .right[
+    ### Advertising
     
     * Change
     * Cancel]
@@ -451,7 +458,7 @@
     
     ---
     
-    template: dblue
+    template: lblue
     class: em-text, bg-cover, trans-h
     background-image: url(img/itv-news-may-2014.png)
     
@@ -487,7 +494,7 @@
     
     ---
     
-    template: dblue
+    template: lblue
     
     class: bg-cover, em-text, trans-h
     background-image: url(/img/senate-election-results.png)
@@ -556,7 +563,7 @@
     
     ---
     
-    template: dblue
+    template: lblue
     class: h1-big
     
     # How to do it?
@@ -569,7 +576,7 @@
     
     ---
     
-    template: dblue
+    template: lblue
     class: h1-big
     
     ## How to do it?
@@ -625,11 +632,9 @@
     ---
     
     template: lblue
-    class: code-reveal, top
+    class: code-reveal, top, wide, long
     
-    ## Example: Complex Data
-    
-    ### RethinkDB
+    ### Example | Complex Data | RethinkDB
     
     ```js
     r.table("gameplays")
@@ -711,7 +716,7 @@
     ---
     
     template: lblue
-    class: code-reveal, top
+    class: code-reveal, top, long, wide
     
     ## Data Changes: Simple
     
@@ -759,7 +764,7 @@
     ---
     
     template: lblue
-    class: code-reveal, top
+    class: code-reveal, top, wide
     
     ## Data Changes: Complex
     
@@ -791,6 +796,7 @@
     ---
     
     template: lblue
+    class: wide
     
     ## Web endpoints
     
@@ -810,6 +816,7 @@
     ---
     
     template: lblue
+    class: wide
     
     ## Logging
     
@@ -835,7 +842,7 @@
     ---
     
     template: lblue
-    class: top
+    class: top, wide, long
     
     ## Data Changes
     
@@ -864,6 +871,7 @@
     ---
     
     template: lblue
+    class: wide
     
     ## Web endpoints
     
@@ -887,6 +895,7 @@
     ---
     
     template: lblue
+    class: wide, longer
     
     ## Logging
     
@@ -918,7 +927,7 @@
     
     ---
     
-    template: dblue
+    template: lblue
     
     ## How you do it
     
@@ -933,8 +942,8 @@
     
     ---
     
-    template: dblue
-    class: h1-big
+    template: lblue
+    class: h1-big, top
     
     # Conclusion
     
@@ -949,7 +958,7 @@
     
     ---
     
-    template: dblue
+    template: lblue
     class: title, h1-big, pinkie-list
     
     # Q&A
