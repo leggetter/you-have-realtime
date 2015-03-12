@@ -187,10 +187,10 @@ h1, h2, h3, h4 {
   font-size: 1.1em;
 }
 
-.remark-slide ul ul {
+.remark-slide ul ul,
+.remark-slide ul ol {
   display: block;
   font-size: 1em;
-  list-style: none;
 }
 
 .remark-slide .block ul {
@@ -257,6 +257,32 @@ blockquote p {
   border-radius: 0;
   /*padding-bottom: 0 !important;
   padding-top: 0 !important;*/
+}
+
+body.big-code .remark-code {
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.remark-slide-content.long h1,
+.remark-slide-content.long h2,
+.remark-slide-content.long h3,
+.remark-slide-content.long h4 {
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.remark-slide-content.longer h1,
+.remark-slide-content.longer h2,
+.remark-slide-content.longer h3,
+.remark-slide-content.longer h4 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.remark-slide-content.wide {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .remark-slide>.top {
