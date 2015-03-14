@@ -43,7 +43,7 @@
     
     ???
     
-    * I work for Pusher...
+    I work for Pusher...
     
     ---
     
@@ -93,14 +93,14 @@
     
     ---
     
-    class: center, middle, bg-cover, em-text
+    class: bg-cover, em-text
     background-image: url(img/warp-core.gif)
     
     # Hard Realtime
     
     ---
     
-    class: center, middle, bg-cover
+    class: bg-cover
     background-image: url(img/core-breach.gif)
     
     ???
@@ -260,6 +260,26 @@
     template: lblue
     class: wide
     
+    ## Requests / Responses
+    
+    ```js
+    var request = require('request');
+    
+    // request
+    request('http://www.google.com', function (error, response, body) {
+      
+      // response
+      
+    });
+    ```
+    
+    ???
+    
+    ---
+    
+    template: lblue
+    class: wide
+    
     ## Logging
     
     ```rb
@@ -282,13 +302,19 @@
     ---
     
     template: lblue
+    class: top, wide
     
-    ## System Interactions
+    ## Summary: System Interactions
     
     * Web endpoints
+    * Request/Response
     * Logging
     * CRON Jobs
     * Incoming Email
+    
+    --
+    
+    ## *Input / Output*
     
     ---
     
@@ -318,11 +344,11 @@
     
     ## Interacting with the App
     
-    * Clicking on the UI
-    * Typing
-    * Dragging
-    * Mouse moves
     * Navigating views
+    * Clicking on the UI
+    * Mouse moves
+    * Dragging
+    * Typing
     * ...
     
     ---
@@ -339,11 +365,12 @@
     ---
     
     template: lblue
+    class: wide
     
-    ## User Interactions
+    ## Summary: User Interactions
     
     * Accessing & Viewing Pages
-    * Interacting with the App
+    * *Interacting with the App*
     * User to User Communication
     
     ---
@@ -372,7 +399,7 @@
     template: lblue
     class: h1-big
     
-    # What's happening right now in your App?
+    # What's happening right now in *your* App?
     
     ???
     
@@ -402,8 +429,11 @@
     ---
     
     template: lblue
-    class: bg-cover
-    background-image: url(img/librato-pusher.png)
+    class: bg-video
+    
+    <video id="video" autoplay="true" loop="true">
+      <source src="/img/librato.mp4" type="video/mp4">
+    </video>
     
     
     ???
@@ -435,6 +465,7 @@
     
     ???
     
+    * It's great to see what's happening right now
     * Analysing the logs later could be too late
     * Ad goals being achieved?
     
@@ -445,6 +476,7 @@
     
     ???
     
+    * Who uses a real-time analytics service?
     * Build your own application analytics
     
     ---
@@ -504,6 +536,14 @@
     ---
     
     template: lblue
+    class: em-text, bg-contain, trans-h
+    background-image: url(/img/pusher-debug-console.png)
+    
+    # Analytics / Tooling
+    
+    ---
+    
+    template: lblue
     class: bg-video, trans-h, em-text
     
     # Chat
@@ -546,7 +586,8 @@
     ---
     
     template: lblue
-    class: h1-big
+    class: bg-cover, trans-h, bg-white
+    background-image: url(img/apps-with-realtime-apis.png)
     
     # Realtime APIs
     
@@ -554,12 +595,6 @@
     
     * For technical customers
     * B2B
-    
-    ---
-    
-    class: bg-white, bg-cover
-    
-    background-image: url(img/apps-with-realtime-apis.png)
     
     ---
     
@@ -816,6 +851,42 @@
     ---
     
     template: lblue
+    class: wide, long, code-reveal, top
+    
+    ## Requests / Responses
+    
+    ```js
+    var request = require('request');
+    
+    var url = 'http://www.google.com';
+    
+    pusher.trigger('web-request', 'outgoing', {url: url});
+    ```
+    --
+    ```js
+    request(url, function (error, response, body) {
+      
+      if(error) {
+        pusher.trigger('web-request',
+                       'incoming-error',
+                       {url: url, error: error});     
+    ```
+    --
+    ```js                     
+      } else {
+        pusher.trigger('web-request',
+                       'incoming-success',
+                       {url: url, body: body});
+      }
+      
+    });
+    ```
+    
+    ???
+    
+    ---
+    
+    template: lblue
     class: wide
     
     ## Logging
@@ -929,7 +1000,7 @@
     
     template: lblue
     
-    ## How you do it
+    ## Summary: How you do it
     
     * Identify the data
     * Analyse/Process Data
