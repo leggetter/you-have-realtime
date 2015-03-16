@@ -266,7 +266,8 @@
     var request = require('request');
     
     // request
-    request('http://www.google.com', function (error, response, body) {
+    var url = 'http://www.google.com';
+    request(url, function (error, response, body) {
       
       // response
       
@@ -536,7 +537,7 @@
     ---
     
     template: lblue
-    class: em-text, bg-contain, trans-h
+    class: em-text, bg-cover, trans-h
     background-image: url(/img/pusher-debug-console.png)
     
     # Analytics / Tooling
@@ -716,13 +717,19 @@
     ---
     
     template: lblue
+    class: long
 
     ## Simple Data
     
-    * DB Schema or Document
-    * Use DB Table or Document names
-    * Use Model Names
-    * e.g. `activities`
+    ### Channels
+    
+    * Use DB Table, Document, Model Names
+      * e.g. `activities`
+      
+    ### Events
+      
+    * What's happened to data for event name
+      * e.g. `created`, `updated`, `deleted`
     
     ???
     
