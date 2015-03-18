@@ -5,6 +5,24 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <link rel="stylesheet" href="./bower_components/pusher-remark-themes/theme.css" />
 </head>
+<style>
+  .vid-width-100 video {
+    width: 100% !important;
+  }
+  
+  .high-top {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+  }
+  
+  .low-bottom {
+    position: absolute;
+    margin: auto;
+    bottom: 5%;
+    right: 5%;
+  }
+</style>
 <body class="big-code">
   <textarea id="source">
     
@@ -312,6 +330,7 @@
     * Logging
     * CRON Jobs
     * Incoming Email
+    * ...
     
     --
     
@@ -537,10 +556,13 @@
     ---
     
     template: lblue
-    class: em-text, bg-cover, trans-h
-    background-image: url(/img/pusher-debug-console.png)
+    class: bg-video, em-text, trans-h, top, vid-width-100
     
     # Analytics / Tooling
+    
+    <video id="video" autoplay="true" loop="true">
+      <source src="/img/pusher-debug-console.mp4" type="video/mp4">
+    </video>
     
     ---
     
@@ -1021,17 +1043,34 @@
     ---
     
     template: lblue
-    class: h1-big, top
+    class: bg-cover, trans-h, top
+    background-image: url(img/you-have-realtime.gif)
     
-    # Conclusion
+    <h2 class="high-top">You Have Realtime Data</h2>
+    
+    <h2 class="low-bottom">And Now You Know It</h2>
+    
+    ---
+    
+    template: lblue
+    class: h1-big, top
     
     ## You Have Realtime Data
     
     --
     
     * Changes/Interactions = Realtime Data
+    
+    --
+    
     * Analyse, Describe, Publish, Consume Data
+    
+    --
+    
     * Realtime System/App Analysis
+    
+    --
+    
     * Build realtime features for your customers
     
     ---
