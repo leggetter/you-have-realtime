@@ -1,3 +1,7 @@
 [submodule "developer-week-2015"]
 	path = developer-week-2015
 	url = https://github.com/leggetter/you-have-realtime.git
+
+[submodule "cloudconf2015"]
+        path = cloudconf2015
+        url = https://github.com/leggetter/you-have-realtime.git
